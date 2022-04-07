@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SOLIDUS</title>
+  
+  </head>
+  <body>
+    <div class="background text-center">
+      <form
+        class="form-signin animated fadeIn"
+        autocomplete="off"
+        [formGroup]="loginFrom"
+        (ngSubmit)="login()"
+      >
+        <img class="mb-0 img" src="assets/logonav.png" alt="logo" />
+        <h1 >Login</h1>
+        <hr>
+        
+      
+<hr>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">👉</span>
+        <label class="sr-only" for="inputEmail">Correo Electronico </label>
+        
+        <input
+          type="email"
+          class="form-control mb-0"
+          id="inputEmail"
+          placeholder="Ingresa el correo"
+          formControlName="email"
+          [class.is-invalid]="emailValidate"
+        />
+        </div>
+        <hr>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">🔒</span>
+        <label class="sr-only" for="inputPassword">Contraseña</label>
+        <input
+          type="password"
+          class="form-control mb-0"
+          id="inputPassword"
+          placeholder="Ingresa la contraseña"
+          formControlName="password"
+          [class.is-invalid]="passwordValidate"
+        />
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-lg btn-danger btn-block mb-2">
+          🎊  Iniciar Sesion 🎊
+        </button><br>
+        <a [routerLink]="['/register']">No tienes una cuenta?</a>
+        <hr>
+        <a [routerLink]="['/login']">Cambiar Contraseña</a>
+     
+      </form>
+    </div>
+  
